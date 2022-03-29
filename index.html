@@ -37,12 +37,10 @@
           камерой.
         </p>
         <img class="course__image" src="./images/course-image.jpg" alt="Фото" />
-        <button class="button-style course__button" type="button">
-          Подробнее
-        </button>
+        <button class="button-style" type="button">Подробнее</button>
       </section>
       <section class="composition" id="composition">
-        <p class="composition__description">Композиция</p>
+        <p class="composition__description description">Композиция</p>
         <h3 class="composition__title">Изучите композицию</h3>
         <p class="composition__subtitle">
           Вы изучите гармоничное размещение всех элементов изображения на
@@ -51,30 +49,85 @@
         <p class="composition__subtitle">
           Изучите композицию интуитивную и какие-то определённые законы.
         </p>
-        <img class="composition__image" src="./images/composition-image.jpg" alt="Фото">
-        <button class="button-style course__button" type="button">
-          Записаться!
-        </button>
+        <img
+          class="composition__image"
+          src="./images/composition-image.jpg"
+          alt="Фото"
+        />
+        <button class="button-style" type="button">Записаться!</button>
         <ul class="composition__rules">
-          <li class="composition__rule">Првило третей, при котором нужно распологать объекты на пересечениях.</li>
-          <li class="composition__rule">Простота: убирай всё лишнее
-            и кадрируй!</li>
-          <li class="composition__rule">Равновесие: уравновесь пятна объекта и фона.</li>
-          <li class="composition__rule">3D глубина кадра: расположи объект позади и перед другими предметами.</li>
+          <li class="composition__rule">
+            Првило третей, при котором нужно распологать объекты на
+            пересечениях.
+          </li>
+          <li class="composition__rule">
+            Простота: убирай всё лишнее и кадрируй!
+          </li>
+          <li class="composition__rule">
+            Равновесие: уравновесь пятна объекта и фона.
+          </li>
+          <li class="composition__rule">
+            3D глубина кадра: расположи объект позади и перед другими
+            предметами.
+          </li>
         </ul>
       </section>
       <section class="camera" id="camera">
-        <p class="camera__description">камера</p>
+        <p class="camera__description description">камера</p>
         <h2 class="composition__title">Настройка Съемка Обработка</h2>
         <p class="camera__subtitle">отзывы про часть о камерах:</p>
-        <img class="camera__image" src="./images/camera-image.jpg" alt="Фото">
-        <div class="camera__review-container">
-            <h4 class="camera_review">на этом курсе я научился пользоватся камерой, как настоящий профессионал!</h4>
+        <img class="camera__image" src="./images/camera-image.jpg" alt="Фото" />
+        <div class="camera__container">
+          <div class="camera__review">
+            <h4 class="camera_comment">
+              на этом курсе я научился пользоватся камерой, как настоящий
+              профессионал!
+            </h4>
+            <p class="camera__author">Питер, водитель.</p>
+            <p class="camera__author-link">@piter123</p>
+          </div>
+          <div class="camera__review">
+            <h4 class="camera_comment">
+              супер крутой курс! на части про фотики я стал разбираться в
+              предназначении кнопок
+            </h4>
+            <p class="camera__author">Джон, спортсмен.</p>
+            <p class="camera__author-link">@john_sport</p>
+          </div>
         </div>
       </section>
-      <section class="search" id="search"></section>
-      <section class="enroll" id="enroll"></section>
+      <section class="search" id="search">
+        <p class="search__description description">поиск заказов</p>
+        <h3 class="search__title">Научим находить заказы!</h3>
+        <img class="search__image" src="./images/search-image.jpg" alt="Фото" />
+        <p class="search__subtitle">
+          Мы научим вас искать заказы на всяких фриланс биржах, а когда вы
+          сделаете крутое портфолио, мы поможем найти постоянную работу.
+        </p>
+        <button class="button-style" type="button">Записаться!</button>
+      </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer" id="footer">
+      <img class="footer__logo" src="./images/footer-logo.svg" alt="стрелка" />
+      <h2 class="footer__title">Записаться! Сейчас!</h2>
+      <form class="footer__form" name="mail-form">
+        <input
+          class="footer__email"
+          placeholder="Ваша почта"
+          type="email"
+          name="email"
+          id="email"
+          required
+        />
+        <button
+          class="footer__button footer__button_size"
+          type="submit"
+          name="submit"
+          value="Записаться!"
+        >
+          Записаться!
+        </button>
+      </form>
+    </footer>
   </body>
 </html>
