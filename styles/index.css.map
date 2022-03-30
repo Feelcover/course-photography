@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAP,sDAAO;AACP,OAAO,CAAP,wDAAO",
+    "sources": [
+        "index.scss",
+        "scss/variables/colors.scss",
+        "scss/variables/fonts.scss",
+        "scss/variables/media.scss",
+        "scss/variables/transition.scss",
+        "scss/mixins/mixins.scss",
+        "scss/blocks/page/page.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}
