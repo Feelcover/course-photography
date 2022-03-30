@@ -1,3 +1,7 @@
-@import url(e:\GitHub\course-photography\vendor\normalize.css);
-@import url(e:\GitHub\course-photography\vendor\fonts\fonts.css);
+@import url(c:\Users\KDFX Team\Desktop\course-photography\vendor\normalize.css);
+@import url(c:\Users\KDFX Team\Desktop\course-photography\vendor\fonts\fonts.css);
+.page {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+}
 /*# sourceMappingURL=index.css.map */
