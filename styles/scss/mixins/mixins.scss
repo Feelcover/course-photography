@@ -16,9 +16,28 @@
     line-height: $line-height;
     color: $color;
     text-decoration: none;
+    list-style: none;
   }
 
   @mixin reset-indentations {
     margin: 0;
     padding: 0;
+  }
+
+  @mixin desktop {
+    @media screen and (max-width: $desktop) {
+      @content;
+    }
+  }
+
+  @mixin laptop {
+    @media screen and (max-width: $laptop) {
+      @content;
+    }
+  }
+
+  @mixin mobile {
+    @media screen and (max-width: $mobile) {
+      @content;
+    }
   }

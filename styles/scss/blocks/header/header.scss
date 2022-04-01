@@ -1,0 +1,69 @@
+.header{
+    max-width: $desktop;
+    width: $width;
+    margin: 0 auto;
+    max-height: 84px;
+    background-color: $red;
+    padding: 22px 50px;
+    transition: $transition;
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: $transition;
+    }
+
+    &__logo{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            animation: rotation;
+            animation-direction: reverse;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+          }
+        }
+          @keyframes rotation {
+            from {
+              transform: rotate(0deg);
+            }
+            from {
+              transform: rotate(360deg);
+            }
+    }
+
+    &__links{
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+        display: flex;
+        justify-content: space-between;
+        min-width: 351px;
+        transition: $transition;
+
+        
+        
+    }
+
+    &__link{
+       @include font-styles($weight: 400, $size: 16px, $line-height: 24px, $color: $white);
+      
+       &:hover{
+        @include font-styles($weight: 700, $size: 16px, $line-height: 24px, $color: $white);
+    }
+    }
+    
+    &__button_menu{
+        display: none;
+    }
+
+    &__burger{
+        display: none;
+    }
+
+}
