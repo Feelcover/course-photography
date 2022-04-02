@@ -6,8 +6,9 @@
 @import "./scss/variables/fonts";
 @import "./scss/variables/media";
 @import "./scss/variables/transition";
-@import "./scss/variables/width.scss";
+@import "./scss/variables/width";
 @import "./scss/mixins/mixins";
 
 @import "./scss/blocks/page/page";
-@import "./scss/blocks/header/header.scss"
+@import "./scss/blocks/header/header";
+@import "./scss/blocks/content/content"

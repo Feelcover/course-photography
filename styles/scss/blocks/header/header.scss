@@ -1,69 +1,181 @@
-.header{
-    max-width: $desktop;
-    width: $width;
-    margin: 0 auto;
-    max-height: 84px;
-    background-color: $red;
-    padding: 22px 50px;
+.header {
+  width: $width;
+  margin: 0 auto;
+  max-width: $desktop;
+  background-color: $red;
+  padding: 22px 50px;
+  box-sizing: border-box;
+  transition: $transition;
+
+  @media screen and (max-width: $tablet) {
+    padding: 24px 40px 24px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 20px 20px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: $transition;
 
-    &__container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: $transition;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: $transition;
+
+    @media screen and (max-width: $tablet) {
+      width: 36px;
+      height: 36px;
     }
 
-    &__logo{
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transition: $transition;
-
-        &:hover {
-            animation: rotation;
-            animation-direction: reverse;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            animation-duration: 5s;
-          }
-        }
-          @keyframes rotation {
-            from {
-              transform: rotate(0deg);
-            }
-            from {
-              transform: rotate(360deg);
-            }
+    @media screen and (max-width: $mobile) {
+      width: 30px;
+      height: 30px;
+      margin: 0;
     }
 
-    &__links{
-        display: flex;
-        align-items: center;
-        min-height: 40px;
-        display: flex;
-        justify-content: space-between;
-        min-width: 351px;
-        transition: $transition;
-
-        
-        
+    &:hover {
+      animation: rotation;
+      animation-direction: reverse;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-duration: 5s;
     }
-
-    &__link{
-       @include font-styles($weight: 400, $size: 16px, $line-height: 24px, $color: $white);
-      
-       &:hover{
-        @include font-styles($weight: 700, $size: 16px, $line-height: 24px, $color: $white);
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
     }
+    from {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 351px;
+    transition: $transition;
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include font-styles(
+      $weight: 400,
+      $size: 16px,
+      $line-height: 24px,
+      $color: $white
+    );
+
+    &:hover {
+      @include font-styles(
+        $weight: 700,
+        $size: 16px,
+        $line-height: 24px,
+        $color: $white
+      );
+    }
+  }
+
+  &__button_menu {
+    display: none;
+    color: $white;
+    background-image: url(../../../../images/header-button-menu.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 32px;
+    height: 23px;
+
+    &:active {
+      opacity: 0.8;
+    }
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: $transition;
+    
+    @media screen and (max-width: $small-mobile){
+      align-items: flex-start;
+    }
+  }
+  &__burger-logo{
+    display: none;
+    width: 30px;
+    height: 30px;
+
+    @media screen and (max-width: $small-mobile){
+      display: block;
+    }
+  }
+
+  &__burger-links {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 351px;
+    transition: $transition;
+
+    @media screen and (max-width: $small-mobile){
+      @include flex-column;
+      margin: 56px 0 6px;
+      min-width: 0px;
+      min-height: 0px;
+    }
+  }
+
+  &__burger-link{
+    @include font-styles(
+      $weight: 400,
+      $size: 16px,
+      $line-height: 24px,
+      $color: $white
+    );
+    @media screen and (max-width: $small-mobile){
+      &:not(:last-child){
+        margin-bottom: 12px;
+      }
     }
     
-    &__button_menu{
-        display: none;
-    }
+  }
 
-    &__burger{
-        display: none;
-    }
+  &__button_close{
+    color: $white;
+    background-image: url(../../../../images/header-button-close.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 27px;
+    height: 27px;
 
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+.closed{
+  display: none;
 }
