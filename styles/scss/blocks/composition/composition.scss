@@ -1,0 +1,72 @@
+.composition{
+    background-color: $yellow;
+    width: $width;
+    transition: $transition;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: 80px 230px 1fr 185px;
+    grid-template-areas:
+      "composition__description composition__image"
+      "composition__title composition__image"
+      "composition__container composition__image"
+      "composition__rules composition__rules";
+
+    &__description{
+        @include reset-indentations;
+        @include font-styles;
+        text-transform: uppercase;
+        grid-area: composition__description;
+    }
+    &__title{
+        @include font-styles($weight: 400, $size: 64px, $line-height: 64px, $color: $black);
+        @include reset-indentations;
+        transition: $transition;
+        max-width: 403px;
+        grid-area: composition__title;
+    }
+    &__image{
+        max-width: 642px;
+        max-height: 685px;
+        width: $width;
+        transition: $transition;
+        grid-area: composition__image;
+    }
+    &__container{
+        @include flex-column;
+        justify-content: space-between;
+        align-items: start;
+        transition: $transition;
+        grid-area: composition__container;
+    }
+    &__subtitles{
+        @include flex-column;
+        align-items: start;
+        max-width: 370px;
+        
+    }
+    &__subtitle{
+        @include reset-indentations;
+        @include font-styles;
+        margin: 0;
+        &:first-child{
+            margin-bottom: 20px;
+        }
+    }
+    &__rules{
+        @include flex-column;
+        flex-direction: row;
+        align-self: end;
+        @include reset-indentations;
+        width: $width;
+        justify-content: space-between;
+        grid-area: composition__rules;
+    }
+    &__rule{
+        @include font-styles;
+        max-width: 291px;
+    }
+    &__button{
+        padding: 10px 62px;
+    }
+}

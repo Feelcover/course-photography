@@ -223,6 +223,8 @@
 }
 
 .course {
+  width: 100%;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr -webkit-max-content;
   grid-template-columns: 1fr max-content;
@@ -379,4 +381,105 @@
   color: #000000;
   text-decoration: none;
   list-style: none;
+}
+
+.composition {
+  background-color: #FFCE00;
+  width: 100%;
+  transition: all 0.4s ease-in;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 80px 230px 1fr 185px;
+  grid-template-areas: "composition__description composition__image" "composition__title composition__image" "composition__container composition__image" "composition__rules composition__rules";
+}
+.composition__description {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+  grid-area: composition__description;
+}
+.composition__title {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+  color: #000000;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s ease-in;
+  max-width: 403px;
+  grid-area: composition__title;
+}
+.composition__image {
+  max-width: 642px;
+  max-height: 685px;
+  width: 100%;
+  transition: all 0.4s ease-in;
+  grid-area: composition__image;
+}
+.composition__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: start;
+  transition: all 0.4s ease-in;
+  grid-area: composition__container;
+}
+.composition__subtitles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: start;
+  max-width: 370px;
+}
+.composition__subtitle {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+}
+.composition__subtitle:first-child {
+  margin-bottom: 20px;
+}
+.composition__rules {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-self: end;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-between;
+  grid-area: composition__rules;
+}
+.composition__rule {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  text-decoration: none;
+  list-style: none;
+  max-width: 291px;
+}
+.composition__button {
+  padding: 10px 62px;
 }/*# sourceMappingURL=index.css.map */
