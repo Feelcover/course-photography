@@ -1,0 +1,39 @@
+.button-style {
+  @include font-styles(
+    $weight: 400,
+    $size: 18px,
+    $line-height: 28px,
+    $color: $black
+  );
+  text-align: center;
+  padding: 10px 68px;
+  max-width: 228px;
+  max-height: 49px;
+  background: #ffffff;
+  cursor: pointer;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  margin: 0;
+
+  @media screen and (max-width: $mobile) {
+    @include font-styles(
+        $weight: 400,
+        $size: 14px,
+        $line-height: 28px,
+        $color: $black
+      );
+    max-width: 169px;
+    max-height: 40px;
+    padding: 6px 48px;
+  }
+
+  &:hover {
+    @include font-styles(
+      $weight: 700,
+      $size: 18px,
+      $line-height: 28px,
+      $color: $black
+    );
+  }
+}

@@ -1,0 +1,11 @@
+.button-style {
+  margin: 0;
+  padding: 11px 67px 10px 68px;
+  max-width: 228px;
+  max-height: 49px;
+  background: #FFFFFF;
+  cursor: pointer;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 9999px;
+}/*# sourceMappingURL=button-style.css.map */
