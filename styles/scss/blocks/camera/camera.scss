@@ -6,12 +6,29 @@
   padding: 50px;
   display: grid;
   grid-template-columns: 1fr max-content;
-  grid-template-rows: 80px 1fr 80px 320px;
+  grid-template-rows: 80px 1fr 80px 470px;
   grid-template-areas:
     "camera__description camera__image"
     "camera__title camera__image"
     "camera__subtitle camera__image"
     "camera__container camera__container";
+
+  @media screen and (max-width: $laptop) {
+    grid-template: max-content / 688px;
+    grid-template-areas:
+      "camera__description"
+      "camera__title"
+      "camera__image"
+      "camera__subtitle"
+      "camera__container";
+    padding: 40px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    padding: 40px 20px 20px;
+  }
 
   &__description {
     @include reset-indentations;
@@ -22,63 +39,126 @@
 
     @media screen and (max-width: $mobile) {
       padding-top: 20px;
-      border-top: 1px solid #000000;
-      @include font-styles($size: 14px, $line-height: 20px);
+      border-top: 1px solid $white;
+      @include font-styles($size: 14px, $line-height: 20px, $color: $white);
     }
   }
   &__title {
     @include reset-indentations;
-    @include font-styles(
-      $size: 122px,
-      $line-height: 122px,
-      $color: $white
-    );
+    @include font-styles($size: 122px, $line-height: 122px, $color: $white);
     max-width: 617px;
     transition: $transition;
     grid-area: camera__title;
+
+    @media screen and (max-width: $laptop){
+        padding: 60px 0 40px;
+    }
+
+    @media screen and (max-width: $mobile){
+        @include font-styles($size: 48px, $line-height: 56px, $color: $white);
+        padding: 30px 0 60px;
+        max-width: 243px;
+    }
   }
   &__subtitle {
     @include reset-indentations;
-    @include font-styles(
-      $size: 18px,
-      $line-height: 28px,
-      $color: $white
-    );
+    @include font-styles($size: 18px, $line-height: 28px, $color: $white);
     text-transform: uppercase;
+    align-self: flex-end;
     grid-area: camera__subtitle;
+
+    @media screen and (max-width: $laptop){
+        padding-top: 60px;
+    }
+
+    @media screen and (max-width: $mobile){
+        @include font-styles($size: 14px, $line-height: 20px, $color: $white);
+    }
   }
-  &__image{
-      max-width: 642px;
-      max-height: 832px;
-      width: $width;
-      transition: $transition;
-      grid-area: camera__image;
+  &__image {
+    max-width: 642px;
+    max-height: 832px;
+    width: $width;
+    transition: $transition;
+    grid-area: camera__image;
+
+    @media screen and (max-width: $laptop) {
+        max-width: 688px;
+        max-height: 656px;
+    }
+
+    @media screen and (max-width: $mobile){
+        max-width: 280px;
+        max-height: 268px;
+    }
   }
-  &__container{
-      display: flex;
-      width: $width;
-      grid-area: camera__container;
+  &__container {
+    display: flex;
+    width: $width;
+    margin-top: 180px;
+    grid-area: camera__container;
+
+    @media screen and (max-width: $laptop) {
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: $mobile){
+        margin-top: 60px;
+    }
   }
-  &__review{
+  &__review {
     @include flex-column;
+    align-items: flex-start;
+    max-width: 530px;
+    &:not(:last-child) {
+      margin-right: 172px;
+    }
+
+    @media screen and (max-width: $laptop){
+        max-width: 688px;
+        &:not(:last-child){
+            padding-bottom: 60px;
+            margin: 0;
+        }
+        &:not(:first-child){
+            padding-top: 60px;
+            border-top: 1px solid $white;
+        }
+
+        @media screen and (max-width: $mobile){
+            max-width: 280px;
+            &:not(:last-child){
+                padding-bottom: 30px;
+            }
+            &:not(:first-child){
+                padding-top: 30px;
+            }
+        }
+    }
   }
-  &_comment{
-    @include font-styles(
-        $size: 43px,
-        $line-height: 43px,
-        $color: $white
-      );
+  &_comment {
+    @include reset-indentations;
+    @include font-styles($size: 43px, $line-height: 43px, $color: $white);
+
+    @media screen and (max-width: $mobile){
+        @include font-styles($size: 24px, $line-height: 26px, $color: $white);
+    }
   }
-  &__author{
-    @include font-styles(
-        $color: $white
-      );
+  &__author {
+    @include reset-indentations;
+    @include font-styles($color: $white);
+    padding: 60px 0 10px;
+
+    @media screen and (max-width: $mobile){
+        @include font-styles($size: 14px, $line-height: 20px, $color: $white);
+    }
   }
-  &__author-link{
-    @include font-styles(
-        $size: 14px,
-        $line-height: 24px,
-        $color: $white
-      );
+  &__author-link {
+    @include reset-indentations;
+    @include font-styles($size: 14px, $line-height: 24px, $color: $white);
+
+    @media screen and (max-width: $mobile){
+        @include font-styles($size: 12px, $line-height: 12px, $color: $white);
+    }
   }
 }

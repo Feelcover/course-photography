@@ -38,7 +38,7 @@
 
     @media screen and (max-width: $mobile) {
       padding-top: 20px;
-      border-top: 1px solid #000000;
+      border-top: 1px solid $black;
       @include font-styles($size: 14px, $line-height: 20px);
     }
   }
@@ -55,7 +55,7 @@
     grid-area: composition__title;
 
     @media screen and (max-width: $laptop) {
-      margin: 40px 0 60px;
+      padding: 40px 0 60px;
     }
     @media screen and (max-width: $mobile) {
       max-width: 280px;
@@ -63,7 +63,7 @@
         $size: 30px,
         $line-height: 38px
       );
-      margin: 30px 0 60px;
+      padding: 30px 0 60px;
     }
   }
   &__image {
