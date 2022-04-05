@@ -1,0 +1,119 @@
+.search {
+  background-color: $white;
+  width: $width;
+  box-sizing: border-box;
+  transition: $transition;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 25px 280px 1fr;
+  grid-template-areas:
+    "search__description ."
+    "search__title ."
+    "search__image search__container";
+
+  @media screen and (max-width: $laptop) {
+    grid-template: max-content / 688px;
+    grid-template-areas:
+      "search__description"
+      "search__title"
+      "search__image"
+      "search__container";
+    padding: 40px;
+  }
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    padding: 40px 20px 20px;
+  }
+
+  &__description {
+    @include reset-indentations;
+    @include font-styles;
+    text-transform: uppercase;
+    transition: $transition;
+    grid-area: search__description;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 20px;
+      border-top: 1px solid $black;
+      @include font-styles($size: 14px, $line-height: 20px);
+    }
+  }
+
+  &__title {
+    @include reset-indentations;
+    @include font-styles($size: 64px, $line-height: 64px);
+    transition: $transition;
+    max-width: 549px;
+    padding: 50px 0 106px;
+    grid-area: search__title;
+
+    @media screen and (max-width: $laptop) {
+      padding: 40px 0 60px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      max-width: 280px;
+      @include font-styles($size: 32px, $line-height: 38px);
+      padding: 30px 0 60px;
+    }
+  }
+
+  &__image {
+    max-width: 648px;
+    max-height: 333px;
+    width: $width;
+    transition: $transition;
+    grid-area: search__image;
+
+    @media screen and (max-width: $laptop) {
+      max-width: 688px;
+      max-height: 360px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        max-width: 280px;
+        max-height: 147px;
+      }
+  }
+
+  &__container {
+    @include flex-column;
+    justify-content: space-between;
+    grid-area: search__container;
+    max-width: 380px;
+    padding-left: 345px;
+    align-items: flex-start;
+
+    @media screen and (max-width: $laptop){
+        padding: 0;
+    }
+
+    @media screen and (max-width: $mobile){
+        max-width: 280px;
+    }
+  }
+
+  &__subtitle {
+    @include reset-indentations;
+    @include font-styles;
+
+    @media screen and (max-width: $laptop){
+        padding: 60px 0;
+    }
+
+    @media screen and (max-width: $mobile){
+        @include font-styles($size: 14px, $line-height: 18px); 
+        padding: 60px 0 30px;
+    }
+  }
+
+  &__button {
+    padding: 10px 62px;
+
+    @media screen and (max-width: $mobile) {
+      padding: 6px 45px;
+    }
+  }
+}

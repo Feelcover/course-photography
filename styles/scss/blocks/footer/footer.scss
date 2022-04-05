@@ -1,0 +1,102 @@
+.footer {
+  @include flex-column;
+  background-color: $red;
+  width: $width;
+  box-sizing: border-box;
+  transition: $transition;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 176px 1fr;
+  grid-template-rows: 100px 120px 1fr 70px;
+  grid-template-areas:
+    "footer__logo footer__title"
+    ". footer__title"
+    ". footer__form"
+    "footer__copyright .";
+
+  @media screen and (max-width: $laptop) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 30px;
+    grid-template-areas:
+      "footer__title"
+      "footer__form"
+      "footer__copyright";
+      padding: 40px;
+  }
+
+
+  &__logo {
+    padding-right: 50px;
+    grid-area: footer__logo;
+
+    @media screen and (max-width: $laptop){
+        display: none;
+    }
+  }
+
+  &__title {
+    @include reset-indentations;
+    @include font-styles($size: 120px, $line-height: 120px, $color: $white);
+    max-width: 685px;
+    grid-area: footer__title;
+
+    @media screen and (max-width: $laptop){
+      @include font-styles($size: 100px, $line-height: 100px, $color: $white);
+      max-width: 571px;
+    }
+
+    @media screen and (max-width: $mobile){
+      @include font-styles($size: 48px, $line-height: 50px, $color: $white);
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    margin: 120px 0 86px;
+    display: flex;
+    grid-area: footer__form;
+  }
+
+  &__email {
+    @include reset-indentations;
+    @include font-styles($size: 14px, $line-height: 24px);
+    width: 348px;
+    height: 50px;
+    padding-left: 20px;
+    background: $white;
+    border: 2px solid $black;
+    border-radius: 8px 0px 0px 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.375px;
+    cursor: pointer;
+  }
+
+  &__button {
+    @include reset-indentations;
+    @include font-styles($size: 14px, $line-height: 24px);
+    width: 205px;
+    height: 53px;
+    background: $white;
+    border: 2px solid $black;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+    
+    &:hover{
+      font-weight: 700;
+    }
+  }
+
+  &__copyright {
+    @include reset-indentations;
+    @include font-styles(
+      $weight: 700,
+      $size: 15px,
+      $line-height: 24px,
+      $color: $white
+    );
+    max-width: 155px;
+    grid-area: footer__copyright;
+  }
+}

@@ -43,12 +43,7 @@
     }
   }
   &__title {
-    @include font-styles(
-      $weight: 400,
-      $size: 64px,
-      $line-height: 64px,
-      $color: $black
-    );
+    @include font-styles($size: 64px, $line-height: 64px);
     @include reset-indentations;
     transition: $transition;
     max-width: 403px;
@@ -59,10 +54,7 @@
     }
     @media screen and (max-width: $mobile) {
       max-width: 280px;
-      @include font-styles(
-        $size: 30px,
-        $line-height: 38px
-      );
+      @include font-styles($size: 30px, $line-height: 38px);
       padding: 30px 0 60px;
     }
   }
@@ -76,7 +68,7 @@
     @media screen and (max-width: $laptop) {
       max-width: 688px;
     }
-    @media screen and (max-width: $mobile){
+    @media screen and (max-width: $mobile) {
       max-width: 280px;
       max-height: 278px;
     }
@@ -101,8 +93,8 @@
       margin-bottom: 60px;
     }
     @media screen and (max-width: $mobile) {
-        margin-bottom: 30px;
-        max-width: 278px;
+      margin-bottom: 30px;
+      max-width: 278px;
     }
   }
   &__subtitle {
@@ -116,11 +108,11 @@
       font-weight: 700;
     }
     @media screen and (max-width: $mobile) {
-        &:not(:last-child) {
-            margin-bottom: 36px;
-          }
-          @include font-styles($size: 14px, $line-height: 20px);
+      &:not(:last-child) {
+        margin-bottom: 36px;
       }
+      @include font-styles($size: 14px, $line-height: 20px);
+    }
   }
   &__rules {
     @include flex-column;
@@ -150,22 +142,23 @@
         border-bottom: 1px solid #000000;
       }
     }
-    @media screen and (max-width: $mobile){
-        min-width: 280px;
-        @include font-styles($size: 14px, $line-height: 18px);
-        &:last-child {
-            padding-top: 14px;
-          }
-          &:not(:last-child) {
-            padding: 14px 0;
-            border-bottom: 1px solid #000000;
-          }
+    @media screen and (max-width: $mobile) {
+      min-width: 280px;
+      @include font-styles($size: 14px, $line-height: 18px);
+      &:last-child {
+        padding-top: 14px;
+      }
+      &:not(:last-child) {
+        padding: 14px 0;
+        border-bottom: 1px solid #000000;
+      }
     }
   }
   &__button {
     padding: 10px 62px;
-    @media screen and (max-width: $mobile){
-        padding: 6px 45px;
+    
+    @media screen and (max-width: $mobile) {
+      padding: 6px 45px;
     }
   }
 }
