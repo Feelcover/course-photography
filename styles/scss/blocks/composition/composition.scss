@@ -1,72 +1,171 @@
-.composition{
-    background-color: $yellow;
+.composition {
+  background-color: $yellow;
+  width: $width;
+  box-sizing: border-box;
+  transition: $transition;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 80px 230px 1fr 185px;
+  grid-template-areas:
+    "composition__description composition__image"
+    "composition__title composition__image"
+    "composition__container composition__image"
+    "composition__rules composition__rules";
+
+  @media screen and (max-width: $laptop) {
+    grid-template: max-content / 688px;
+    grid-template-areas:
+      "composition__description"
+      "composition__title"
+      "composition__image"
+      "composition__container"
+      "composition__rules";
+    padding: 40px;
+  }
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    padding: 40px 20px 20px;
+  }
+
+  &__description {
+    @include reset-indentations;
+    @include font-styles;
+    text-transform: uppercase;
+    transition: $transition;
+    grid-area: composition__description;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 20px;
+      border-top: 1px solid #000000;
+      @include font-styles($size: 14px, $line-height: 20px);
+    }
+  }
+  &__title {
+    @include font-styles(
+      $weight: 400,
+      $size: 64px,
+      $line-height: 64px,
+      $color: $black
+    );
+    @include reset-indentations;
+    transition: $transition;
+    max-width: 403px;
+    grid-area: composition__title;
+
+    @media screen and (max-width: $laptop) {
+      margin: 40px 0 60px;
+    }
+    @media screen and (max-width: $mobile) {
+      max-width: 280px;
+      @include font-styles(
+        $size: 30px,
+        $line-height: 38px
+      );
+      margin: 30px 0 60px;
+    }
+  }
+  &__image {
+    max-width: 642px;
+    max-height: 685px;
     width: $width;
     transition: $transition;
-    padding: 50px;
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    grid-template-rows: 80px 230px 1fr 185px;
-    grid-template-areas:
-      "composition__description composition__image"
-      "composition__title composition__image"
-      "composition__container composition__image"
-      "composition__rules composition__rules";
+    grid-area: composition__image;
 
-    &__description{
-        @include reset-indentations;
-        @include font-styles;
-        text-transform: uppercase;
-        grid-area: composition__description;
+    @media screen and (max-width: $laptop) {
+      max-width: 688px;
     }
-    &__title{
-        @include font-styles($weight: 400, $size: 64px, $line-height: 64px, $color: $black);
-        @include reset-indentations;
-        transition: $transition;
-        max-width: 403px;
-        grid-area: composition__title;
+    @media screen and (max-width: $mobile){
+      max-width: 280px;
+      max-height: 278px;
     }
-    &__image{
-        max-width: 642px;
-        max-height: 685px;
-        width: $width;
-        transition: $transition;
-        grid-area: composition__image;
+  }
+  &__container {
+    @include flex-column;
+    justify-content: space-between;
+    align-items: start;
+    transition: $transition;
+    grid-area: composition__container;
+
+    @media screen and (max-width: $laptop) {
+      margin: 60px 0 50px;
     }
-    &__container{
-        @include flex-column;
-        justify-content: space-between;
-        align-items: start;
-        transition: $transition;
-        grid-area: composition__container;
+  }
+  &__subtitles {
+    @include flex-column;
+    align-items: start;
+    max-width: 370px;
+
+    @media screen and (max-width: $laptop) {
+      margin-bottom: 60px;
     }
-    &__subtitles{
-        @include flex-column;
-        align-items: start;
-        max-width: 370px;
-        
+    @media screen and (max-width: $mobile) {
+        margin-bottom: 30px;
+        max-width: 278px;
     }
-    &__subtitle{
-        @include reset-indentations;
-        @include font-styles;
-        margin: 0;
-        &:first-child{
-            margin-bottom: 20px;
-        }
+  }
+  &__subtitle {
+    @include reset-indentations;
+    @include font-styles;
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
-    &__rules{
-        @include flex-column;
-        flex-direction: row;
-        align-self: end;
-        @include reset-indentations;
-        width: $width;
-        justify-content: space-between;
-        grid-area: composition__rules;
+    &_bold {
+      font-weight: 700;
     }
-    &__rule{
-        @include font-styles;
-        max-width: 291px;
+    @media screen and (max-width: $mobile) {
+        &:not(:last-child) {
+            margin-bottom: 36px;
+          }
+          @include font-styles($size: 14px, $line-height: 20px);
+      }
+  }
+  &__rules {
+    @include flex-column;
+    flex-direction: row;
+    align-self: end;
+    @include reset-indentations;
+    width: $width;
+    justify-content: space-between;
+    grid-area: composition__rules;
+
+    @media screen and (max-width: $laptop) {
+      flex-direction: column;
+      align-items: flex-start;
     }
-    &__button{
-        padding: 10px 62px;
+  }
+  &__rule {
+    @include font-styles;
+    max-width: 291px;
+
+    @media screen and (max-width: $laptop) {
+      min-width: 688px;
+      &:last-child {
+        padding-top: 30px;
+      }
+      &:not(:last-child) {
+        padding: 30px 0;
+        border-bottom: 1px solid #000000;
+      }
     }
+    @media screen and (max-width: $mobile){
+        min-width: 280px;
+        @include font-styles($size: 14px, $line-height: 18px);
+        &:last-child {
+            padding-top: 14px;
+          }
+          &:not(:last-child) {
+            padding: 14px 0;
+            border-bottom: 1px solid #000000;
+          }
+    }
+  }
+  &__button {
+    padding: 10px 62px;
+    @media screen and (max-width: $mobile){
+        padding: 6px 45px;
+    }
+  }
 }
