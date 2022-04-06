@@ -127,7 +127,7 @@
 .header__button_menu {
   display: none;
   color: #FFFFFF;
-  background-image: url(../../../../images/header-button-menu.svg);
+  background-image: url(../images/header-menu.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -199,7 +199,7 @@
 }
 .header__button_close {
   color: #FFFFFF;
-  background-image: url(../../../../images/header-button-close.svg);
+  background-image: url(../images/header-button-close.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -1164,7 +1164,6 @@
   border: 2px solid #000000;
   border-radius: 0px 8px 8px 0px;
   cursor: pointer;
-  transition: all 0.4s ease-in;
 }
 .footer__button:hover {
   font-weight: 700;
