@@ -16,21 +16,25 @@
 
   @media screen and (max-width: $laptop) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 30px;
+    grid-template-rows: 200px 1fr 30px;
     grid-template-areas:
       "footer__title"
       "footer__form"
       "footer__copyright";
-      padding: 40px;
+    padding: 40px;
   }
 
+  @media screen and (max-width: $mobile){
+    grid-template-rows: 105px 1fr 30px;
+    padding: 40px 20px 20px;
+  }
 
   &__logo {
     padding-right: 50px;
     grid-area: footer__logo;
 
-    @media screen and (max-width: $laptop){
-        display: none;
+    @media screen and (max-width: $laptop) {
+      display: none;
     }
   }
 
@@ -40,21 +44,33 @@
     max-width: 685px;
     grid-area: footer__title;
 
-    @media screen and (max-width: $laptop){
+    @media screen and (max-width: $laptop) {
       @include font-styles($size: 100px, $line-height: 100px, $color: $white);
       max-width: 571px;
     }
 
-    @media screen and (max-width: $mobile){
+    @media screen and (max-width: $mobile) {
       @include font-styles($size: 48px, $line-height: 50px, $color: $white);
       max-width: 100%;
+      padding-top: 20px;
+      border-top: 1px solid $white;
     }
   }
 
   &__form {
     margin: 120px 0 86px;
     display: flex;
+    box-sizing: border-box;
+    transition: $transition;
     grid-area: footer__form;
+
+    @media screen and (max-width: $laptop){
+      margin: 190px 0 80px;
+    }
+
+    @media screen and (max-width: $mobile){
+      margin: 200px 0 40px;
+    }
   }
 
   &__email {
@@ -71,20 +87,35 @@
     overflow: hidden;
     letter-spacing: 0.375px;
     cursor: pointer;
+    box-sizing: border-box;
+    transition: $transition;
+
+    @media screen and (max-width: $mobile){
+      @include font-styles($size: 11px, $line-height: 24px);
+      width: 175px;
+      height: 50px;
+    }
   }
 
   &__button {
     @include reset-indentations;
     @include font-styles($size: 14px, $line-height: 24px);
     width: 205px;
-    height: 53px;
+    height: 50px;
+    box-sizing: border-box;
     background: $white;
     border: 2px solid $black;
     border-radius: 0px 8px 8px 0px;
     cursor: pointer;
-    
-    &:hover{
+
+    &:hover {
       font-weight: 700;
+    }
+
+    @media screen and (max-width: $mobile){
+      @include font-styles($size: 11px, $line-height: 24px);
+      width: 107px;
+      height: 50px;
     }
   }
 

@@ -13,12 +13,12 @@
 
     <header class="header">
 
-      <div class="header__container">
+      <div class="header__main-menu">
         <img class="header__logo" src="./images/header-logo.svg" alt="Лого" />
         <nav class="header__links">
-          <a class="header__link" href="">Композиция</a>
-          <a class="header__link" href="">Камера</a>
-          <a class="header__link" href="">Поиск заказов</a>
+          <a class="header__link" href="#composition">Композиция</a>
+          <a class="header__link" href="#camera">Камера</a>
+          <a class="header__link" href="#search">Поиск заказов</a>
         </nav>
         <button class="header__button_menu" type="button"></button>
       </div>
@@ -26,9 +26,9 @@
       <div class="header__burger closed">
         <img class="header__burger-logo" src="./images/header-logo.svg" alt="Лого" />
         <nav class="header__burger-links">
-          <a class="header__burger-link" href="">Композиция</a>
-          <a class="header__burger-link" href="">Камера</a>
-          <a class="header__burger-link" href="">Поиск заказов</a>
+          <a class="header__burger-link" href="#composition">Композиция</a>
+          <a class="header__burger-link" href="#camera">Камера</a>
+          <a class="header__burger-link" href="#search">Поиск заказов</a>
         </nav>
         <button class="header__button_close" type="button"></button>
       </div>
@@ -43,7 +43,7 @@
           Фотография в природных условиях, уроки по композиции и по пользованию
           камерой.
         </p>
-        <button class="button-style" type="button">Подробнее</button>
+        <button class="button-style more" type="button">Подробнее</button>
       </div>
       </section>
       
@@ -65,7 +65,7 @@
               Изучите композицию интуитивную и какие-то определённые законы.
             </p>
           </div>
-          <button class="composition__button button-style" type="button">Записаться!</button>
+          <button class="composition__button button-style enroll" type="button">Записаться!</button>
         </div>
         <ul class="composition__rules">
           <li class="composition__rule">
@@ -119,7 +119,7 @@
             Мы научим вас искать заказы на всяких фриланс биржах, а когда вы
             сделаете крутое портфолио, мы поможем найти постоянную работу.
           </p>
-          <button class="search__button button-style" type="button">Записаться!</button>
+          <button class="search__button button-style enroll-two" type="button">Записаться!</button>
         </div>
       </section>
 
@@ -128,7 +128,7 @@
     <footer class="footer" id="footer">
       <img class="footer__logo" src="./images/footer-logo.svg" alt="стрелка" />
       <h2 class="footer__title">Записаться! Сейчас!</h2>
-      <form class="footer__form" name="mail-form">
+      <form class="footer__form" name="mail-form" id="#enroll">
         <input
           class="footer__email"
           placeholder="Ваша почта"
@@ -138,7 +138,7 @@
           required
         />
         <button
-          class="footer__button footer__button_size"
+          class="footer__button"
           type="submit"
           name="submit"
           value="Записаться!"
@@ -148,5 +148,6 @@
       </form>
       <p class="footer__copyright">2021 Photo-lessons.</p>
     </footer>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

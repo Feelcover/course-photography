@@ -42,7 +42,7 @@
     padding: 20px 20px;
   }
 }
-.header__container {
+.header__main-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -361,6 +361,14 @@
   border-radius: 9999px;
   margin: 0;
 }
+.button-style:hover {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  text-decoration: none;
+  list-style: none;
+}
 @media screen and (max-width: 767px) {
   .button-style {
     font-weight: 400;
@@ -373,14 +381,14 @@
     max-height: 40px;
     padding: 6px 48px;
   }
-}
-.button-style:hover {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 28px;
-  color: #000000;
-  text-decoration: none;
-  list-style: none;
+  .button-style:hover {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 28px;
+    color: #000000;
+    text-decoration: none;
+    list-style: none;
+  }
 }
 
 .composition {
@@ -1032,9 +1040,15 @@
 @media screen and (max-width: 1320px) {
   .footer {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 30px;
+    grid-template-rows: 200px 1fr 30px;
     grid-template-areas: "footer__title" "footer__form" "footer__copyright";
     padding: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    grid-template-rows: 105px 1fr 30px;
+    padding: 40px 20px 20px;
   }
 }
 .footer__logo {
@@ -1078,12 +1092,26 @@
     text-decoration: none;
     list-style: none;
     max-width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #FFFFFF;
   }
 }
 .footer__form {
   margin: 120px 0 86px;
   display: flex;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in;
   grid-area: footer__form;
+}
+@media screen and (max-width: 1320px) {
+  .footer__form {
+    margin: 190px 0 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__form {
+    margin: 200px 0 40px;
+  }
 }
 .footer__email {
   margin: 0;
@@ -1105,6 +1133,20 @@
   overflow: hidden;
   letter-spacing: 0.375px;
   cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in;
+}
+@media screen and (max-width: 767px) {
+  .footer__email {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+    list-style: none;
+    width: 175px;
+    height: 50px;
+  }
 }
 .footer__button {
   margin: 0;
@@ -1116,14 +1158,28 @@
   text-decoration: none;
   list-style: none;
   width: 205px;
-  height: 53px;
+  height: 50px;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 2px solid #000000;
   border-radius: 0px 8px 8px 0px;
   cursor: pointer;
+  transition: all 0.4s ease-in;
 }
 .footer__button:hover {
   font-weight: 700;
+}
+@media screen and (max-width: 767px) {
+  .footer__button {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+    list-style: none;
+    width: 107px;
+    height: 50px;
+  }
 }
 .footer__copyright {
   margin: 0;

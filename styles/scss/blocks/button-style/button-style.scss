@@ -16,6 +16,15 @@
   border-radius: 9999px;
   margin: 0;
 
+  &:hover {
+    @include font-styles(
+      $weight: 700,
+      $size: 18px,
+      $line-height: 28px,
+      $color: $black
+    );
+  }
+
   @media screen and (max-width: $mobile) {
     @include font-styles(
         $weight: 400,
@@ -26,14 +35,17 @@
     max-width: 169px;
     max-height: 40px;
     padding: 6px 48px;
+
+    &:hover {
+      @include font-styles(
+        $weight: 700,
+        $size: 14px,
+        $line-height: 28px,
+        $color: $black
+      );
+    }
+  
   }
 
-  &:hover {
-    @include font-styles(
-      $weight: 700,
-      $size: 18px,
-      $line-height: 28px,
-      $color: $black
-    );
-  }
+  
 }
