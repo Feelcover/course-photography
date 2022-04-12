@@ -83,6 +83,9 @@
     @media screen and (max-width: $laptop) {
       margin: 60px 0 50px;
     }
+    @media screen and (max-width: $laptop){
+      margin: 60px 0 66px;
+    }
   }
   &__subtitles {
     @include flex-column;
@@ -104,9 +107,7 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
-    &_bold {
-      font-weight: 700;
-    }
+    
     @media screen and (max-width: $mobile) {
       &:not(:last-child) {
         margin-bottom: 36px;
@@ -114,6 +115,11 @@
       @include font-styles($size: 14px, $line-height: 20px);
     }
   }
+
+  &__bold {
+    font-weight: 700;
+  }
+
   &__rules {
     @include flex-column;
     flex-direction: row;
@@ -143,7 +149,8 @@
       }
     }
     @media screen and (max-width: $mobile) {
-      min-width: 280px;
+      min-width: 200px;
+      max-width: 270px;
       @include font-styles($size: 14px, $line-height: 18px);
       &:last-child {
         padding-top: 14px;

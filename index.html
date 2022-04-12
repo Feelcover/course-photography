@@ -16,22 +16,14 @@
       <div class="header__main-menu">
         <img class="header__logo" src="./images/header-logo.svg" alt="Лого" />
         <nav class="header__links">
-          <a class="header__link" href="#composition">Композиция</a>
-          <a class="header__link" href="#camera">Камера</a>
-          <a class="header__link" href="#search">Поиск заказов</a>
+          <a class="header__link" href="#composition" id="compositionLink">Композиция</a>
+          <a class="header__link" href="#camera" id="cameraLink">Камера</a>
+          <a class="header__link" href="#search" id="searchLink">Поиск заказов</a>
         </nav>
-        <button class="header__button_menu" type="button"></button>
+        <button class="header__button-menu" type="button"></button>
+        <button class="header__button-close header__button-hidden" type="button"></button>
       </div>
 
-      <div class="header__burger closed">
-        <img class="header__burger-logo" src="./images/header-logo.svg" alt="Лого" />
-        <nav class="header__burger-links">
-          <a class="header__burger-link" href="#composition">Композиция</a>
-          <a class="header__burger-link" href="#camera">Камера</a>
-          <a class="header__burger-link" href="#search">Поиск заказов</a>
-        </nav>
-        <button class="header__button_close" type="button"></button>
-      </div>
     </header>
 
     <main class="content">
@@ -59,13 +51,13 @@
           <div class="composition__subtitles">
             <p class="composition__subtitle">
               Вы изучите гармоничное размещение всех элементов изображения на
-               <span class="composition__subtitle_bold">снимке</span>. 
+               <span class="composition__bold">снимке</span>. 
             </p>
             <p class="composition__subtitle">
               Изучите композицию интуитивную и какие-то определённые законы.
             </p>
           </div>
-          <button class="composition__button button-style enroll" type="button">Записаться!</button>
+          <button class="composition__button button-style" id="enroll" type="button">Записаться!</button>
         </div>
         <ul class="composition__rules">
           <li class="composition__rule">
@@ -92,7 +84,7 @@
         <img class="camera__image" src="./images/camera-image.jpg" alt="Фото" />
         <div class="camera__container">
           <div class="camera__review">
-            <h4 class="camera_comment">
+            <h4 class="camera__comment">
               на этом курсе я научился пользоватся камерой, как настоящий
               профессионал!
             </h4>
@@ -100,7 +92,7 @@
             <p class="camera__author-link">@piter123</p>
           </div>
           <div class="camera__review">
-            <h4 class="camera_comment">
+            <h4 class="camera__comment">
               супер крутой курс! на части про фотики я стал разбираться в
               предназначении кнопок
             </h4>
@@ -119,7 +111,7 @@
             Мы научим вас искать заказы на всяких фриланс биржах, а когда вы
             сделаете крутое портфолио, мы поможем найти постоянную работу.
           </p>
-          <button class="search__button button-style enroll-two" type="button">Записаться!</button>
+          <button class="search__button button-style" id="enroll-two" type="button">Записаться!</button>
         </div>
       </section>
 

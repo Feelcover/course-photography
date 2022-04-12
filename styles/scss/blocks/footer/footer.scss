@@ -129,5 +129,14 @@
     );
     max-width: 155px;
     grid-area: footer__copyright;
+
+    @media screen and (max-width: $mobile){
+      @include font-styles(
+      $weight: 700,
+      $size: 12px,
+      $line-height: 24px,
+      $color: $white
+    );
+    }
   }
 }
